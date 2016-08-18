@@ -6,8 +6,8 @@ import AppComponent from './app.component';
 
 angular.module('app', [
     uiRouter,
-    Common.name,
-    Components.name
+    Common,
+    Components
   ])
   .config(($locationProvider) => {
     "ngInject";
