@@ -1,16 +1,21 @@
-var path    = require('path');
+var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'sourcemap',
   entry: {},
   module: {
     loaders: [
-       { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
-       { test: /\.html$/, loader: 'raw' },
-       { test: /\.scss$/, loader: 'style!css!sass' },
-       { test: /\.css$/, loader: 'style!css' }
+      {test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel'},
+      {test: /\.html$/, loader: 'raw'},
+      {test: /\.scss?$/, loaders: ['style', 'css', 'sass']},
+      {test: /\.css$/, loader: 'style!css'},
+      {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml'},
+      {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff"},
+      {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff"},
+      {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/octet-stream"},
+      {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader"}
     ]
   },
   plugins: [

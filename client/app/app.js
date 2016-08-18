@@ -6,13 +6,21 @@ import AppComponent from './app.component';
 
 angular.module('app', [
     uiRouter,
-    Common,
-    Components
+    Common.name,
+    Components.name
   ])
-  .config(($locationProvider) => {
+  .config(($locationProvider, $stateProvider) => {
     "ngInject";
-    // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions
-    // #how-to-configure-your-server-to-work-with-html5mode
+    $stateProvider
+      .state('app', {
+        template: '<div ui-view></div>',
+        resolve: {
+          isLoggedIn: ()=>{
+            return true;
+          }
+        }
+      });
+
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
 

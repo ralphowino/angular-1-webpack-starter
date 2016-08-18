@@ -1,13 +1,11 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
 import navbarComponent from './navbar.component';
+import uibDropdown from 'angular-ui-bootstrap/src/dropdown';
 
 let navbarModule = angular.module('navbar', [
-  uiRouter
+  uibDropdown
 ])
 
-.component('navbar', navbarComponent)
-  
-.name;
+.component('navbar', navbarComponent);
 
 export default navbarModule;

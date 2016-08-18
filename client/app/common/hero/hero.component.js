@@ -6,7 +6,8 @@ let heroComponent = {
   restrict: 'E',
   bindings: {},
   template,
-  controller
+  controller,
+  controllerAs: 'vm'
 };
 
 export default heroComponent;

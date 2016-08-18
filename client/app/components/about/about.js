@@ -11,12 +11,10 @@ let aboutModule = angular.module('about', [
   $stateProvider
     .state('about', {
       url: '/about',
-      component: 'about'
+      template: '<about></about>'
     });
 })
 
-.component('about', aboutComponent)
-  
-.name;
+.component('about', aboutComponent);
 
 export default aboutModule;
