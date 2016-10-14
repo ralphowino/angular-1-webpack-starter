@@ -16,15 +16,15 @@ import webpachHotMiddelware from 'webpack-hot-middleware';
 import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
 
-let root = 'client';
+let root = 'app';
 
 // helper method for resolving paths
 let resolveToApp = (glob = '') => {
-  return path.join(root, 'app', glob); // app/{glob}
+  return path.join(root, '', glob); // app/{glob}
 };
 
 let resolveToComponents = (glob = '') => {
-  return path.join(root, 'app/components', glob); // app/components/{glob}
+  return path.join(root, 'components', glob); // app/components/{glob}
 };
 
 // map of all paths
@@ -35,7 +35,7 @@ let paths = {
     resolveToApp('**/*.html'),
     path.join(root, 'index.html')
   ],
-  entry: path.join(__dirname, root, 'app/app.js'),
+  entry: path.join(__dirname, root, 'app.module.js'),
   output: root,
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**')
 };
@@ -74,7 +74,7 @@ gulp.task('serve', () => {
 
   serve({
     port: process.env.PORT || 3000,
-    open: false,
+    open: true,
     server: {baseDir: root},
     middleware: [
       historyApiFallback(),

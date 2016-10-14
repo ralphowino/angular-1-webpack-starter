@@ -1,0 +1,17 @@
+<form class="forget-form" ng-submit="auth.reset(auth.reset.password)">
+    <h3>{{'auth.reset_password' | i18n}}?</h3>
+    <p>
+        {{'auth.reset_password_instructions' | i18n}}
+    </p>
+    <div class="form-group">
+        <input class="form-control placeholder-no-fix" type="password" placeholder="{{'common.password' | i18n}}" ng-model="auth.reset.password"/>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control placeholder-no-fix" type="password" placeholder="{{'common.confirm_password' | i18n}}" ng-model="auth.reset.confirm_password"/>
+    </div>
+    <div class="form-actions">
+        <button type="button" ui-sref="auth.login" class="btn btn-default">{{'common.back' | i18n}}</button>
+        <button type="submit" class="btn btn-success uppercase pull-right">{{'common.submit' | i18n}}</button>
+    </div>
+</form>

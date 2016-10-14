@@ -1,12 +1,3 @@
-<p align="center">
-  <a href="https://angularclass.com" target="_blank">
-    <img src="https://cloud.githubusercontent.com/assets/1016365/9864650/93a5660a-5b00-11e5-8716-a0d538d12913.png" alt="ng6-starter" width="480px;" >
-  </a>
-  <!-- old img url: http://res.cloudinary.com/angularclass/image/upload/v1431802814/ng6_vrmd60.png -->
-</p>
-
-# NG6 [![Join Slack](https://img.shields.io/badge/slack-join-brightgreen.svg)](https://angularclass.com/slack-join) [![Join the chat at https://gitter.im/angularclass/NG6-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angularclass/NG6-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 > The de facto starter repo for building scalable apps with [Angular](https://angularjs.org), [ES6](https://git.io/es6features), and [Webpack](http://webpack.github.io/)
 
 This repo serves as a minimal starter for those looking to get up-and-running with Angular and ES6, using [Gulp](http://gulpjs.com/) and [Webpack](http://webpack.github.io/) for the build process.
@@ -16,8 +7,6 @@ This repo serves as a minimal starter for those looking to get up-and-running wi
 * Tasks for generating additional boilerplate Angular components
 * A full testing system in place
 * scss support
-
-**Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
 > If you're looking for a preliminary [Angular 2](https://angular.io/) build, please use the [angular2-webpack-starter](https://github.com/angularclass/angular2-webpack-starter).
 ___
@@ -54,8 +43,6 @@ NG6 uses Gulp and Webpack together for its build system. Yes, you don't need Gul
 * Starting and calling Webpack
 * Starting a development server (yes, Webpack can do this too)
 * Generating boilerplate for the Angular app
-
-**Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
 ## File Structure
 We use a componentized approach with NG6. This will be the eventual standard (and particularly helpful, if using Angular's new router) as well as a great way to ensure a tasteful transition to Angular 2, when the time is ripe. Everything--or mostly everything, as we'll explore (below)--is a component. A component is a self-contained concern--may it be a feature or strictly-defined, ever-present element of the UI (such as a header, sidebar, or footer). Also characteristic of a component is that it harnesses its own stylesheets, templates, controllers, routes, services, and specs. This encapsulation allows us the comfort of isolation and structural locality. Here's how it looks:
@@ -145,27 +132,21 @@ To generate a component, run `gulp component --name componentName`.
 
 The parameter following the `--name` flag is the name of the component to be created. Ensure that it is unique or it will overwrite the preexisting identically-named component.
 
-The component will be created, by default, inside `client/app/components`. To change this, apply the `--parent` flag, followed by a path relative to `client/app/components/`.
+The component will be created, by default, inside `client/components`. To change this, apply the `--parent` flag, followed by a path relative to `client/app/components/`.
 
-For example, running `gulp component --name signup --parent auth` will create a `signup` component at `client/app/components/auth/signup`.  
+For example, running `gulp component --name signup --parent auth` will create a `signup` component at `client/components/auth/signup`.  
 
-Running `gulp component --name footer --parent ../common` creates a `footer` component at `client/app/common/footer`.  
+Running `gulp component --name footer --parent ../common` creates a `footer` component at `client/common/footer`.  
 
 Because the argument to `--name` applies to the folder name **and** the actual component name, make sure to camelcase the component names.
 
 # Starter Kit Support and Questions
 > Contact us, anytime, regarding anything about this project.
 
-* [Gitter: angularclass/NG6-starter](https://gitter.im/angularclass/NG6-starter)
-* [Twitter: @AngularClass](https://twitter.com/AngularClass)
+* [Website: Ralphowino Consulting](http://ralphowino.com/)
 
 ___
 
-enjoy — **AngularClass** 
+enjoy — **RO** 
 
 <br><br>
-
-[![AngularClass](https://cloud.githubusercontent.com/assets/1016365/9863770/cb0620fc-5af7-11e5-89df-d4b0b2cdfc43.png  "Angular Class")](https://angularclass.com)
-##[AngularClass](https://angularclass.com)
-> Learn AngularJS, Angular 2, and Modern Web Development from the best.
-> Looking for corporate Angular training, want to host us, or Angular consulting? scott@angularclass.com

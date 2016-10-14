@@ -1,0 +1,13 @@
+<form class="forget-form" ng-submit="auth.forgot(auth.recover.email)">
+    <h3>{{'auth.forgot_password' | i18n}}</h3>
+    <p>
+        {{'auth.forgot_password_instructions' | i18n}}
+    </p>
+    <div class="form-group">
+        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="{{'common.email' | i18n}}" ng-model="auth.recover.email"/>
+    </div>
+    <div class="form-actions">
+        <button type="button" ui-sref="auth.login" class="btn btn-default">{{'common.back' | i18n}}</button>
+        <button type="submit" class="btn btn-success uppercase pull-right">{{'common.submit' | i18n}}</button>
+    </div>
+</form>

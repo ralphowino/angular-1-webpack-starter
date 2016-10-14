@@ -1,0 +1,26 @@
+<form class="login-form" ng-submit="auth.login(auth.credentials)">
+    <!-- <h4 class="form-title">{{'auth.sign_in' | i18n}}</h4> -->
+    
+    <div class="form-group">
+        <!-- <label>{{'common.email' | i18n}}</label> -->
+        <input name="email" class="form-control" type="text" placeholder="{{'common.email' | i18n}}" ng-model="auth.credentials.email"/>
+    </div>
+    
+    <div class="form-group">
+        <!-- <label>{{'common.password' | i18n}}</label> -->
+        <input name="password" class="form-control" type="password" autocomplete="off" placeholder="{{'common.password' | i18n}}" ng-model="auth.credentials.password" ng-enter="auth.login(auth.credentials)"/>
+    </div>
+    
+    <div class="checkbox">
+        <label>
+          <input name="remember" type="checkbox" ng-model="auth.remember" value="1"/> Keep me logged in
+        </label>
+    </div>
+
+    <input type="submit" id="loginBtn" class="btn btn-default" value="{{'auth.login' | i18n}}"/><br />
+
+    <p class="text-center dt20">
+        <a ui-sref="auth.register" class="uppercase">{{'auth.create_account' | i18n}}</a> &middot;
+        <a ui-sref="auth.forgot" class="forget-password">{{'auth.forgot_password' | i18n}}?</a>
+    </p>
+</form>
