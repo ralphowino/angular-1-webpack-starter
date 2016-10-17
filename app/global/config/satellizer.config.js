@@ -1,7 +1,7 @@
 export function SatellizerConfig($authProvider, Env) {
 	'ngInject';
 
-    $authProvider.baseUrl = Env.get('API_URL');
+    $authProvider.baseUrl = Env.API_URL;
     $authProvider.signupUrl = 'auth/register';
 	$authProvider.loginUrl = '/api/auth/login';
 	$authProvider.signupUrl = '/api/auth/register';

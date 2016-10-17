@@ -3,18 +3,17 @@
 import gulp     from 'gulp';
 import webpack  from 'webpack';
 import path     from 'path';
-import sync     from 'run-sequence';
 import rename   from 'gulp-rename';
 import template from 'gulp-template';
-import fs       from 'fs';
+import dotenv   from 'dotenv';
 import yargs    from 'yargs';
-import lodash   from 'lodash';
 import gutil    from 'gulp-util';
 import serve    from 'browser-sync';
 import webpackDevMiddelware from 'webpack-dev-middleware';
 import webpachHotMiddelware from 'webpack-hot-middleware';
 import colorsSupported      from 'supports-color';
 import historyApiFallback   from 'connect-history-api-fallback';
+import ngConstant from 'gulp-ng-constant';
 
 let root = 'app';
 
@@ -40,8 +39,28 @@ let paths = {
   blankTemplates: path.join(__dirname, 'generator', 'component/**/*.**')
 };
 
+function env() {
+  const envConfig = {
+    Env: dotenv.config()
+  };
+  return ngConstant({
+        name: "env",
+        constants: envConfig,
+        stream: true,
+        space: '      ',
+        template: 'angular\n    .module(\'<%- moduleName %>\', [])' +
+        '\n    <% constants.forEach(function(constant) { %>' +
+        '.constant(\'<%- constant.name %>\', <%= constant.value %>)' +
+        '<%    }) %>;',
+        wrap: "es6"
+      })
+      .pipe(rename('env.module.js'))
+      .pipe(gulp.dest('app'));
+}
+
 // use webpack.config.js to build modules
 gulp.task('webpack', (cb) => {
+  env();
   const config = require('./webpack.dist.config');
   config.entry.app = paths.entry;
 
@@ -61,6 +80,7 @@ gulp.task('webpack', (cb) => {
 });
 
 gulp.task('serve', () => {
+  env();
   const config = require('./webpack.dev.config');
   config.entry.app = [
     // this modules required to make HRM working

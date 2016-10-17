@@ -2,11 +2,13 @@ import angular from 'angular';
 
 import {SatellizerConfig} from './config/satellizer.config';
 import {SatellizerInterceptor} from './config/satellizer.config';
+import {RestangularConfig} from './config/restangular.config';
 import {AuthDecorator} from './decorators/auth.decorator';
-import {EnvService} from './services/env.service';
+import {Resource} from './factories/resource.factory';
 
 export let GlobalModule = angular.module('app.global', [])
     .config(AuthDecorator)
     .config(SatellizerConfig)
     .config(SatellizerInterceptor)
-    .service('Env', EnvService);
+    .config(RestangularConfig)
+    .factory('Resource', Resource);

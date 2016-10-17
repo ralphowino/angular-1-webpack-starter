@@ -7,7 +7,7 @@ export function AuthDecorator($provide) {
 
     $delegate.recoverPassword = function (email) {
       var opts = {};
-      opts.url = Env.get('API_URL') + '/auth/recover';
+      opts.url = Env.API_URL + '/auth/recover';
       opts.data = { email: email };
       opts.method = 'POST';
       return $http(opts);
@@ -15,7 +15,7 @@ export function AuthDecorator($provide) {
 
     $delegate.refreshToken = function (token) {
       var opts = {};
-      opts.url = Env.get('API_URL') + '/auth/token/refresh';
+      opts.url = Env.API_URL + '/auth/token/refresh';
       opts.data = { token: token };
       opts.method = 'POST';
       return $http(opts).then(function (response) {
@@ -40,7 +40,7 @@ export function AuthDecorator($provide) {
 
     $delegate.resetPassword = function (data) {
       var opts = {};
-      opts.url = Env.get('API_URL') + '/auth/reset';
+      opts.url = Env.API_URL + '/auth/reset';
       opts.data = data;
       opts.method = 'POST';
       return $http(opts);
@@ -48,7 +48,7 @@ export function AuthDecorator($provide) {
 
     $delegate.activate = function (id, code) {
       var opts = {};
-      opts.url = Env.get('API_URL') + '/auth/activate/' + id + '/' + code;
+      opts.url = Env.API_URL + '/auth/activate/' + id + '/' + code;
       opts.method = 'GET';
 
       return $http(opts).then(function (response) {
@@ -65,7 +65,7 @@ export function AuthDecorator($provide) {
             include: 'company'
           }
         };
-        $delegate.user = $http.get(Env.get('API_URL') + '/auth/profile', config)
+        $delegate.user = $http.get(Env.API_URL + '/auth/profile', config)
           .then(function (response) {
             $delegate.user = response.data.data;
             return response.data.data;
@@ -81,7 +81,7 @@ export function AuthDecorator($provide) {
           include: 'company'
         }
       };
-      $delegate.user = $http.get(Env.get('API_URL') + '/auth/profile', config).then(function (response) {
+      $delegate.user = $http.get(Env.API_URL + '/auth/profile', config).then(function (response) {
         return response.data.data;
       });
       return $delegate.user;

@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ProvidePlugin = webpack.ProvidePlugin;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -30,6 +31,10 @@ module.exports = {
       inject: 'body',
       hash: true
     }),
+
+      new ProvidePlugin({
+        _: 'lodash',
+      }),
 
     // Automatically move all modules defined outside of application directory to vendor bundle.
     // If you are using more complicated project structure, consider to specify common chunks manually.
