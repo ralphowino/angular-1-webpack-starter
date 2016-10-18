@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import 'restangular';
+import 'angular-sweetalert';
 import {CommonModule} from './common/common.module';
 import {ComponentsModule} from './components/components.module';
 import {GlobalModule} from './global/global.module';
@@ -10,6 +11,7 @@ import EnvModule from './env.module';
 angular.module('app', [
     uiRouter,
     'restangular',
+    'oitozero.ngSweetAlert',
     EnvModule.name,
     CommonModule.name,
     ComponentsModule.name,

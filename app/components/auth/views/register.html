@@ -1,0 +1,33 @@
+<form class="register-form" ng-submit="auth.register(auth.credentials)">
+    <h3>Sign Up</h3>
+
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Email</label>
+        <input class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="email@example.com" ng-model="auth.credentials.email"/>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Password</label>
+        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" ng-model="auth.credentials.password"/>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">First Name</label>
+        <input class="form-control placeholder-no-fix" type="text" placeholder="First Name" ng-model="auth.credentials.first_name"/>
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">Last Name</label>
+        <input class="form-control placeholder-no-fix" type="text" placeholder="Last Name" ng-model="auth.credentials.last_name"/>
+    </div>
+
+    <div class="form-group margin-top-20 margin-bottom-20">
+        <label class="check">
+            <input type="checkbox" ng-model="auth.tnc"/> I Agree to Terms and Conditions </a>
+        </label>
+
+        <div id="register_tnc_error">
+        </div>
+    </div>
+    <div class="form-actions">
+        <a ui-sref="auth.login" class="btn btn-default">Login </a>
+        <button type="submit" class="btn btn-success uppercase pull-right" ng-class="{disabled:!auth.tnc}">Submit</button>
+    </div>
+</form>

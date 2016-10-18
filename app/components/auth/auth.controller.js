@@ -3,6 +3,7 @@ export class AuthController {
   constructor($auth, $state, SweetAlert) {
     'ngInject';
 
+    console.log('hapa');
     this.$auth = $auth;
     this.$state = $state;
     this.SweetAlert = SweetAlert;

@@ -8,17 +8,17 @@ export function authRoutes($stateProvider) {
 
   $stateProvider
     .state('auth', {
-      templateUrl: 'auth/views/auth.tpl.html',
+      templateUrl: 'components/auth/views/auth.html',
       data: {
         bodyClass: 'page-auth'
       },
-      resolve: {
-        skipIfLoggedIn: skipIfLoggedIn
-      }
+      // resolve: {
+      //   skipIfLoggedIn: skipIfLoggedIn
+      // }
     })
     .state('auth.login', {
       url: '/auth/login',
-      templateUrl: 'auth/views/login.tpl.html',
+      templateUrl: 'components/auth/views/login.html',
       controller: AuthController,
       controllerAs: 'auth',
       data: {
@@ -27,7 +27,7 @@ export function authRoutes($stateProvider) {
     })
     .state('auth.register', {
       url: '/auth/register',
-      templateUrl: 'auth/views/register.tpl.html',
+      templateUrl: 'components/auth/views/register.html',
       controller: AuthController,
       controllerAs: 'auth',
       data: {
@@ -41,7 +41,7 @@ export function authRoutes($stateProvider) {
     })
     .state('auth.forgot', {
       url: '/auth/forgot',
-      templateUrl: 'auth/views/forgot.tpl.html',
+      templateUrl: 'components/auth/views/forgot.html',
       controller: AuthController,
       controllerAs: 'auth',
       data: {
@@ -50,7 +50,7 @@ export function authRoutes($stateProvider) {
     })
     .state('auth.reset', {
       url: '/auth/reset/{id}/{code}',
-      templateUrl: 'auth/views/reset.tpl.html',
+      templateUrl: '/components/auth/views/reset.html',
       controller: ResetController,
       controllerAs: 'auth',
       data: {

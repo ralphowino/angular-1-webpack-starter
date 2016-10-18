@@ -1,0 +1,13 @@
+<form class="forget-form" ng-submit="auth.forgot(auth.recover.email)">
+    <h3>Forgot Password?</h3>
+    <p>
+        Please enter email then check you inbox for reset link.
+    </p>
+    <div class="form-group">
+        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="example.com" ng-model="auth.recover.email"/>
+    </div>
+    <div class="form-actions">
+        <button type="button" ui-sref="auth.login" class="btn btn-default">Login</button>
+        <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
+    </div>
+</form>
